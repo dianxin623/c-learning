@@ -3,7 +3,10 @@
 //
 #include <iostream>
 using namespace std;
+#include<ctime>
 int main(){
+    //随机数种子，利用当前系统时间生成随机数，防止每次rand随机数一样
+    srand(time(NULL));
     int real_num = rand()%100 +1 ; //生成(0~99) +1 的随机数
     int val = 0;
     while(1) {
