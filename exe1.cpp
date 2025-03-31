@@ -3,9 +3,15 @@ using namespace std;
 # define ALL 555
 
 int main(){
-    cout << "hfffffello world!!!" << 
-         34324325 << endl;
-    unsigned int a=-190;
-    cout<<a;
-    return 0;
+  for(int i =0;i<10;++i)
+  {
+      cout<<i<<endl;
+  }
+
+  int i=0;
+  for (;i<10;){
+      cout<<i<<endl;
+      i++;
+  }
+  return 0;
 }
