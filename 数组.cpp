@@ -1,21 +1,21 @@
 //
 // Created by pion on 2025/4/7.
-// ¶¨ÒåÊı×éÊ±£¬±ØĞëÒª¶¨Òå³õÊ¼³¤¶È£¬ÈôÓĞ¸³Öµ¶¨Òå£¬Ôò¿É²»¶¨Òå³¤¶È
+//
 
 #include<iostream>
 using namespace std;
 
 int main(){
     int arr[] = {1,2,3,4,5};
-    cout<<"µÚÒ»¸öÔªËØµÄ³¤¶È: "<<sizeof(arr[0])<<endl; //µÚÒ»¸öÔªËØµÄ³¤¶È
-    cout<<"Õû¸öÊı×éµÄ³¤¶È: "<<sizeof(arr)<<endl; //Õû¸öÊı×éµÄ³¤¶È
-    cout<<"Êı×éÔªËØ¸öÊı£º"<<sizeof(arr)/sizeof(arr[0])<<endl;
-    //Êı×éÃû¿ÉÒÔ²é¿´Êı×éµÄÊ×µØÖ·
-    cout<<arr<<endl; //ÄÚ´æµÄÊ×µØÖ·
-    cout<<&arr[0]<<endl; //µÚÒ»¸öÔªËØµÄµØÖ·
-    cout<<&arr[1]<<endl; //µÚÒ»¸öÔªËØµÄµØÖ·
+    cout<<"æ•°ç»„ç¬¬ä¸€ä¸ªå…ƒç´ å¤§å°"<<sizeof(arr[0])<<endl; //
+    cout<<"æ•´ä¸ªæ•°ç»„å†…å­˜å¤§å° "<<sizeof(arr)<<endl;
+    cout<<"æ•°ç»„çš„å…ƒç´ ä¸ªæ•°ï¼š"<<sizeof(arr)/sizeof(arr[0])<<endl;
+    //å¯ä»¥é€šè¿‡æ•°ç»„åç›´æ¥è®¿é—®å†…å­˜åœ°å€
+    cout<<arr<<endl; //æ•°ç»„çš„é¦–åœ°å€
+    cout<<&arr[0]<<endl; //æ•°ç»„ç¬¬ä¸€ä¸ªå…ƒç´ çš„åœ°å€
+    cout<<&arr[1]<<endl; //ç¬¬äºŒä¸ªå…ƒç´ çš„åœ°å€
 
-    //Ò»Î¬Êı×é°¸Àı
+    //æ•°ç»„æ¡ˆä¾‹ï¼šæ‰¾å¤§å°
     int weigh[5] = {300, 350, 200, 400, 250};
     int maxWeigh = weigh[0];
     int index = 0;
@@ -29,9 +29,9 @@ int main(){
     cout<<maxWeigh<<endl;
     cout<<index<<endl;
 
-    //°¸Àı2£ºÊı×éÔªËØÄæÖÃ
+    //é€†ç½®
     int a[] = {1,3,2,5,4};
-    //ÊµÏÖË¼Â·£ºÊı×é¶Ô°ëË÷Òı£¬ÖğÒ»½»»»
+    //
     int length = sizeof(a)/sizeof(a[0]);
     int temp;
     for(int i =0; i<length/2; i++){
@@ -39,11 +39,11 @@ int main(){
         a[i] = a[length -1 -i];
         a[length -1 -i] = temp;
     }
-    cout<<"Êı×éaÄæÖÃºó£º";
+    cout<<"é€†ç½®åï¼š";
     for (int i=0;i<length; i++)
     cout<< a[i]<<' ';
     cout<<endl;
-    //ÁíÒ»ÖÖÊµÏÖ£º²»ÓÃ¿¼ÂÇÊµ¼ÊÊı×é³¤¶È£¬½èÖúÏÂ±ê×ÔÔö×Ô¼õ
+    //å¦ä¸€ç§å®ç°
     int start = 0;
     int end = length -1;
     do
@@ -55,15 +55,15 @@ int main(){
         --end;
     }
     while(start<end);
-    cout<<"Êı×éaÔÙ´ÎÄæÖÃºó£º";
+    cout<<"å†æ¬¡é€†ç½®åï¼š";
     for(int i = 0;i<length;i++)
         cout<<a[i]<<' ';
     cout<<endl;
 
-    //Ã°ÅİÅÅĞò£º
+    //å†’æ³¡æ’åº
     int b[] ={4,2,0,5,7,1,3,9,8};
     length = sizeof(b)/sizeof(b[0]);
-    cout<<"ÅÅĞòÇ°b: ";
+    cout<<"æ’åºä¹‹å‰";
     for (int i=0;i<length;++i)
         cout<<b[i]<<' '; cout<<endl;
     for(int i=0;i<length-1; i++)
@@ -73,11 +73,11 @@ int main(){
                 b[j]=b[j+1];
                 b[j+1]=temp;
             }
-    cout<<"ÅÅĞòºób: ";
+    cout<<"æ’åºå";
     for (int i=0;i<length;++i)
     cout<<b[i]<<' ';cout<<endl;
 
-    //¶şÎ¬Êı×é£º¶¨Òå
+    //äºŒç»´æ•°ç»„
     int aa[2][3] = {
             {1,34,6},
             {5,7,12}
@@ -88,17 +88,17 @@ int main(){
     };
     int aa1[2][3] ={1,34,6,5,7,12};
     int aa2[][3] ={1,34,6,5,7,12};
-    cout<<"¶şÎ¬Êı×éaaµÄ³¤¶È£º"<<sizeof(aa)<<endl;
-    cout<<"¶şÎ¬Êı×éaaµÚÒ»ĞĞµÄ³¤¶È£º"<<sizeof(aa[0])<<endl;
-    cout<<"¶şÎ¬Êı×éaaµÚÒ»¸öÔªËØµÄ³¤¶È£º"<<sizeof(aa[0][0])<<endl;
-    cout<<"¶şÎ¬Êı×éaaµÄĞĞÊı£º"<<sizeof(aa)/sizeof(aa[0])<<endl;
-    cout<<"¶şÎ¬Êı×éaaµÄÁĞÊı£º"<<sizeof(aa[0])/sizeof(aa[0][0])<<endl;
-    cout<<"¶şÎ¬Êı×éaaµÄÊ×µØÖ·\\µÚÒ»ĞĞÊ×µØÖ·£º"<<aa<<endl;
-    cout<<"¶şÎ¬Êı×éaaµÄµÚ¶şĞĞµØÖ·£º"<<aa[1]<<endl;
-    cout<<"¶şÎ¬Êı×éaaµÄµÚ¶şĞĞµÚÒ»¸öÔªËØµØÖ·£º"<<&aa[1][0]<<endl;
-    cout<<"¶şÎ¬Êı×éaaµÄµÚ¶şĞĞµÚ¶ş¸öÔªËØµØÖ·£º"<<&aa[1][1]<<endl;
+    cout<<""<<sizeof(aa)<<endl;
+    cout<<""<<sizeof(aa[0])<<endl;
+    cout<<""<<sizeof(aa[0][0])<<endl;
+    cout<<""<<sizeof(aa)/sizeof(aa[0])<<endl;
+    cout<<""<<sizeof(aa[0])/sizeof(aa[0][0])<<endl;
+    cout<<""<<aa<<endl;
+    cout<<""<<aa[1]<<endl;
+    cout<<""<<&aa[1][0]<<endl;
+    cout<<""<<&aa[1][1]<<endl;
 
-    //¶şÎ¬Êı×é°¸Àı£º3ÃûÑ§Éú³É¼¨Í³¼Æ
+    //
     int scores[][3] = {
             100, 100, 100,
             90, 50, 100,
@@ -107,12 +107,12 @@ int main(){
     int lengthH = sizeof(scores)/sizeof(scores[0]);
     int lengthL = sizeof(scores[0])/sizeof(scores[0][0]);
     int sum;
-    string name[] ={"ÕÅÈı","ÀïË¹","ÀÍÎñ"};
+    string name[] ={"å¼ ä¸‰","é‡Œæ–¯","è€è™èƒ¡"};
     for(int i =0; i<lengthH;i++) {
         sum =0;
         for (int j = 0; j < lengthL; j++)
             sum += scores[i][j];
-        cout <<  name[i] << "µÄ×Ü·Ö£º" << sum << endl;
+        cout <<  name[i] << "çš„æ€»æˆç»©" << sum << endl;
     }
     return 0;
 }
