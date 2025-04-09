@@ -22,7 +22,8 @@ void allocate(teacher * t, int len){
             for(int j=0;j<5;j++){
                 t[i].aArr[j].sName = "student_";
                 t[i].aArr[j].sName += nameSeed[j];
-                t[i].aArr[j].score = 60;
+                int random = rand()%61 +40;
+                t[i].aArr[j].score = random;
             }
         }
 }
@@ -31,12 +32,13 @@ void printInfo(teacher t[], int len){
     for(int i=0;i<len;i++) {
         cout << "老师的姓名:" << t[i].tName << endl;
         for (int j = 0; j < 5; j++)
-            cout << "\t" << t[i].tName << "老师带的学生为：" << t[i].aArr[j].sName << "，成绩为：" << t[i].aArr[j].score
-                 << endl;
+            cout << "\t" << t[i].tName <<
+            "老师带的学生为：" << t[i].aArr[j].sName << "，成绩为：" << t[i].aArr[j].score<< endl;
     }
 }
 
 int main(){
+    srand(time(NULL));  //每次运行更改随机数种子
     teacher tArr[3];
     int len= sizeof(tArr)/sizeof(tArr[0]);
     allocate(tArr, len);
